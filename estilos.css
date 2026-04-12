@@ -1,0 +1,63 @@
+/* ========================================
+   TERRAZAS DE BAYONA - ESTILOS PRINCIPALES
+   ======================================== */
+
+/* VARIABLES GLOBALES (CAMBIA AQUÍ LOS COLORES Y TAMAÑOS) */
+:root {
+    --color-principal: #0d9488;      /* Teal - color principal de la marca */
+    --color-principal-oscuro: #115e59;
+    --color-acento: #fbbf24;         /* Amarillo - para botones y ofertas */
+    --color-texto: #1f2937;
+    --color-gris-claro: #f3f4f6;
+    --fuente-principal: 'Inter', sans-serif;
+    --borde-redondeado: 1rem;
+}
+
+/* RESET Y BASE */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: var(--fuente-principal);
+    color: var(--color-texto);
+    background-color: #ffffff;
+}
+
+/* CONTENEDOR PRINCIPAL */
+.contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* BOTONES - un estilo único para todos */
+.boton-primario {
+    background-color: var(--color-acento);
+    color: #0f172a;
+    font-weight: bold;
+    padding: 0.75rem 2rem;
+    border-radius: 9999px;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.boton-primario:hover {
+    background-color: #f59e0b;
+    transform: scale(1.05);
+}
+
+/* SECCIONES */
+.seccion {
+    padding: 4rem 0;
+}
+
+.seccion-titulo {
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    color: var(--color-principal);
+    margin-bottom: 2rem;
+}
+
+/* ... resto de estilos organizados por sección ... */
