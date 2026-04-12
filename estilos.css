@@ -1,7 +1,329 @@
-/* GALERÍA DE HABITACIÓN (nuevas imágenes) */
-.galeria-habitacion {
-    margin-bottom: 3rem;
+/* ========================================
+   TERRAZAS DE BAYONA - ESTILOS COMPLETOS
+   ======================================== */
+
+:root {
+    --color-principal: #0d9488;
+    --color-principal-dark: #115e59;
+    --color-acento: #f59e0b;
+    --color-acento-dark: #d97706;
+    --color-texto: #1f2937;
+    --color-texto-claro: #6b7280;
+    --color-fondo: #ffffff;
+    --color-fondo-gris: #f9fafb;
+    --fuente: 'Inter', sans-serif;
+    --sombra: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+    --sombra-hover: 0 20px 30px -12px rgba(0, 0, 0, 0.15);
 }
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: var(--fuente);
+    color: var(--color-texto);
+    background-color: var(--color-fondo);
+    line-height: 1.5;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+.contenedor { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+
+/* BOTONES */
+.boton {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.75rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.boton-primario {
+    background-color: var(--color-acento);
+    color: #0f172a;
+}
+
+.boton-primario:hover {
+    background-color: var(--color-acento-dark);
+    transform: scale(1.05);
+    box-shadow: var(--sombra);
+}
+
+.boton-secundario {
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+}
+
+.boton-secundario:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: scale(1.05);
+}
+
+.boton-whatsapp {
+    background-color: #25D366;
+    color: white;
+}
+
+.boton-whatsapp:hover {
+    background-color: #128C7E;
+    transform: scale(1.02);
+}
+
+.boton-grande {
+    padding: 1rem 2.5rem;
+    font-size: 1.125rem;
+    width: 100%;
+    justify-content: center;
+}
+
+/* WHATSAPP FLOTANTE */
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 100;
+}
+
+.whatsapp-float a {
+    background-color: #25D366;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.whatsapp-float a:hover {
+    transform: scale(1.1);
+    background-color: #128C7E;
+}
+
+/* HEADER */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    padding: 0.75rem 0;
+}
+
+.header-contenido {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--color-principal);
+    text-decoration: none;
+}
+
+.logo i { margin-right: 0.5rem; }
+
+.nav-desktop { display: flex; gap: 2rem; }
+.nav-desktop a {
+    text-decoration: none;
+    color: var(--color-texto);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+.nav-desktop a:hover { color: var(--color-principal); }
+
+.menu-mobile-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--color-principal);
+}
+
+.menu-mobile {
+    display: none;
+    flex-direction: column;
+    background-color: white;
+    padding: 1rem 1.5rem;
+    border-top: 1px solid #e5e7eb;
+}
+
+.menu-mobile a {
+    padding: 0.75rem 0;
+    text-decoration: none;
+    color: var(--color-texto);
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.menu-mobile.activo { display: flex; }
+
+/* HERO */
+.hero {
+    position: relative;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    background-image: url('https://i.postimg.cc/ZqNkwr5j/terraza_imagen_5.jpg');
+    background-size: cover;
+    background-position: center;
+    margin-top: 60px;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(13, 148, 136, 0.85) 0%, rgba(17, 94, 89, 0.75) 100%);
+}
+
+.hero-contenido {
+    position: relative;
+    z-index: 2;
+    color: white;
+    padding: 4rem 1.5rem;
+}
+
+.hero-badge {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(4px);
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    margin-bottom: 1.5rem;
+}
+
+.hero-titulo {
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) { .hero-titulo { font-size: 4rem; } }
+
+.text-acento { color: var(--color-acento); }
+
+.hero-descripcion {
+    font-size: 1.125rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    max-width: 600px;
+}
+
+.hero-botones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.hero-stats {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.hero-stats div { text-align: center; }
+.hero-stats strong { display: block; font-size: 1.5rem; font-weight: 800; }
+.hero-stats span { font-size: 0.875rem; opacity: 0.8; }
+
+/* OFERTA ESPECIAL */
+.oferta-especial {
+    padding: 4rem 0;
+    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+}
+
+.oferta-contenido {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.oferta-tag {
+    display: inline-block;
+    background-color: #dc2626;
+    color: white;
+    padding: 0.25rem 1rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.oferta-info h2 { font-size: 2rem; margin-bottom: 1.5rem; }
+.oferta-info ul { list-style: none; margin-bottom: 1.5rem; }
+.oferta-info li { margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem; }
+.oferta-info li i { color: var(--color-principal); }
+
+.oferta-disponibilidad {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.dispo-bar {
+    background-color: #e5e7eb;
+    border-radius: 9999px;
+    height: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.dispo-fill {
+    background-color: var(--color-acento);
+    height: 0.5rem;
+    border-radius: 9999px;
+    width: 33%;
+}
+
+.oferta-imagen img {
+    border-radius: 1rem;
+    box-shadow: var(--sombra);
+}
+
+/* SECCIONES GENERALES */
+.seccion { padding: 5rem 0; }
+.seccion:nth-child(even) { background-color: var(--color-fondo-gris); }
+
+.seccion-titulo {
+    font-size: 2rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) { .seccion-titulo { font-size: 2.5rem; } }
+
+.seccion-subtitulo {
+    text-align: center;
+    color: var(--color-texto-claro);
+    margin-bottom: 3rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.text-principal { color: var(--color-principal); }
+
+/* GALERÍA HABITACIÓN (NUEVAS IMÁGENES) */
+.galeria-habitacion { margin-bottom: 3rem; }
 
 .galeria-grid {
     display: grid;
@@ -18,15 +340,305 @@
     transition: transform 0.3s ease;
 }
 
-.galeria-grid img:hover {
+.galeria-grid img:hover { transform: scale(1.02); }
+
+@media (max-width: 640px) {
+    .galeria-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+    .galeria-grid img { height: 150px; }
+}
+
+/* HABITACIÓN LISTA */
+.habitacion-lista {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.habitacion-lista div {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem;
+    background-color: var(--color-fondo-gris);
+    border-radius: 0.75rem;
+}
+
+.habitacion-lista i {
+    color: var(--color-principal);
+    font-size: 1.25rem;
+}
+
+/* TERRAZA */
+.terraza-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.terraza-card {
+    background-color: white;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: var(--sombra);
+    transition: transform 0.3s;
+}
+
+.terraza-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--sombra-hover);
+}
+
+.terraza-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.terraza-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    padding: 1rem 1rem 0.5rem;
+}
+
+.terraza-card p { padding: 0 1rem 1rem; color: var(--color-texto-claro); }
+
+/* PRECIOS */
+.precios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.precio-card {
+    background-color: white;
+    border-radius: 1rem;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: var(--sombra);
+    border: 1px solid #e5e7eb;
+    transition: all 0.3s;
+    position: relative;
+}
+
+.precio-card:hover {
+    border-color: var(--color-principal);
+    transform: translateY(-3px);
+}
+
+.precio-card.destacado {
+    border: 2px solid var(--color-acento);
     transform: scale(1.02);
 }
 
-@media (max-width: 640px) {
-    .galeria-grid {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    }
-    .galeria-grid img {
-        height: 150px;
-    }
+.precio-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--color-acento);
+    color: #0f172a;
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 0.25rem 1rem;
+    border-radius: 9999px;
+}
+
+.precio-noches {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+}
+
+.precio-valor {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--color-principal);
+    margin: 1rem 0;
+}
+
+.precio-valor small { font-size: 1rem; font-weight: normal; }
+.precio-card ul { list-style: none; margin: 1.5rem 0; }
+.precio-card li { margin-bottom: 0.5rem; color: var(--color-texto-claro); }
+.precio-card li i { color: var(--color-principal); margin-right: 0.5rem; }
+
+.precios-nota {
+    text-align: center;
+    color: var(--color-texto-claro);
+    font-size: 0.875rem;
+    padding: 1rem;
+    background-color: var(--color-fondo-gris);
+    border-radius: 0.75rem;
+}
+
+.precio-spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid #e5e7eb;
+    border-top-color: var(--color-principal);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 1rem;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* SERVICIOS */
+.servicios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.servicio-card {
+    background-color: white;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: var(--sombra);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.servicio-card:hover { transform: translateY(-5px); }
+.servicio-card img { width: 100%; height: 200px; object-fit: cover; }
+.servicio-card h3 { font-size: 1.25rem; font-weight: 700; padding: 1rem 1rem 0.5rem; }
+.servicio-card p { padding: 0 1rem 1rem; color: var(--color-texto-claro); }
+
+/* OPINIONES */
+.opiniones-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.opinion-card {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: var(--sombra);
+    text-align: center;
+}
+
+.opinion-card .estrella {
+    color: var(--color-acento);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.opinion-card p {
+    font-style: italic;
+    margin-bottom: 1rem;
+    color: var(--color-texto-claro);
+}
+
+.opinion-card span {
+    font-weight: 600;
+    color: var(--color-principal);
+}
+
+/* FORMULARIO RESERVAS */
+.reservas-formulario {
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 1.5rem;
+    box-shadow: var(--sombra);
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.form-grid input, .form-grid select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.75rem;
+    font-family: var(--fuente);
+    transition: border-color 0.3s;
+}
+
+.form-grid input:focus, .form-grid select:focus {
+    outline: none;
+    border-color: var(--color-principal);
+}
+
+.form-check {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background-color: var(--color-fondo-gris);
+    border-radius: 0.75rem;
+}
+
+.form-check label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+.form-nota {
+    text-align: center;
+    font-size: 0.75rem;
+    color: var(--color-texto-claro);
+    margin-top: 1rem;
+}
+
+.reservas-whatsapp {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid #e5e7eb;
+    text-align: center;
+}
+
+.reservas-whatsapp p { margin-bottom: 1rem; color: var(--color-texto-claro); }
+
+/* FOOTER */
+.footer {
+    background-color: #1f2937;
+    color: #9ca3af;
+    padding: 3rem 0 1rem;
+}
+
+.footer-contenido {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-contenido h3, .footer-contenido h4 {
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.footer-contenido a {
+    color: #9ca3af;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.footer-contenido a:hover { color: white; }
+
+.footer-copyright {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid #374151;
+    font-size: 0.875rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .nav-desktop { display: none; }
+    .menu-mobile-btn { display: block; }
+    .oferta-contenido { grid-template-columns: 1fr; }
+    .hero-titulo { font-size: 2rem; }
+    .seccion { padding: 3rem 0; }
+    .precio-card.destacado { transform: scale(1); }
 }
